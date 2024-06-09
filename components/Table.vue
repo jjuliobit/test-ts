@@ -3,7 +3,9 @@
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-4xl">
       <h1 class="text-2xl font-bold mb-6 text-center">Tabela</h1>
       <div class="mb-4 flex justify-end">
-        <button @click="addRow" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+        <button @click="addRow" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+        data-test="add-button"  
+        >
           Add
         </button>
       </div>
@@ -24,8 +26,8 @@
               {{ cell }}
             </td>
             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-              <button @click="editRow(index)" class="text-indigo-600 hover:text-indigo-900 mr-2">Edit</button>
-              <button @click="deleteRow(index)" class="text-red-600 hover:text-red-900">Delete</button>
+              <button @click="editRow(index)" class="text-indigo-600 hover:text-indigo-900 mr-2" :data-test="'edit-button-' + index">Edit</button>
+              <button @click="deleteRow(index)" class="text-red-600 hover:text-red-900" :data-test="'delete-button-' + index">Delete</button>              
             </td>
           </tr>
         </tbody>
